@@ -1,7 +1,31 @@
-<body>
-    <h1>Welcome to PetFax!!!</h1>
-    {% for pet in pets %}
-    <h2>{{ pet.pet_name }}</h2>
-    <img src="{{ pet.pet_photo }}" alt="Photo of pet" />
-    {% endfor %}
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PetFax</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')
+            }}">
+    </head>
+    <body>
+        <div>
+            <h1 style="text-decoration:underline">Welcome to PetFax</h1>
+            <div class="cards-container">
+                {% for pet in pets %}
+                <div class="card-style">
+                    <h2>{{ pet.pet_name }}</h2>
+                    <img class="index-image" src="{{ pet.pet_photo }}" />
+                    <br>
+                    <a href="/pets/{{pet.pet_id}}">More Info</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+            <br>
+            Would you like to add your own fun facts here? <br>
+            <a href="/facts/new">Click To Submit</a>
+        </div>
+    </body>
+</html>

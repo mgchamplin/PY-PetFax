@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Single Pet</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')
+            }}">
+    </head>
+    <body>
+        <h1>{{ one_pet.pet_name }}</h1>
+        <img class="single-image" src="{{ one_pet.pet_photo }}" />
+        <br>
+        <h2 style="text-decoration-line:underline">Fun facts about pets like
+            {{one_pet.pet_name}}:</h2>
+        <h3>{{one_pet.pet_fact}}</h3>
+        <a href="/pets">Go Back</a>
+    </body>
+</html>
